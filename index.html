@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuerve Design Company</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+        @layer utilities{
+            .list-box{
+                list-style-type: "■";
+            }
+            .animation-ease{
+                transition: all 0.3s ease;
+            }
+
+            .special:hover{
+                background-color: #1A1A1A;
+                color: white;
+            }
+
+            .font-sora{
+                font-family: 'Sora', serif;
+            }
+
+            .font-manrope{
+                font-family: 'Manrope', sans-serif;
+            }
+
+            .bg-primary{
+                background-color: #1A1A1A;
+            }
+
+            .bg-secondary{
+                background-color: #FF620A;
+            }
+
+            .hamburger-trigger:has(input#menu:checked) {
+
+                .menu {
+                transform: translate(0);
+                }
+
+                label[for=menu]{
+                    position: relative;
+
+                    div:nth-of-type(1){
+                        left: 0;
+                        position: absolute;
+                        width: 100%;
+                        transform: rotate(45deg);
+                    }
+                    div:nth-of-type(2){
+                        left: 0;
+                        position: absolute;
+                        width: 100%;
+                        transform: rotate(-45deg);               
+                    }
+                    div:nth-of-type(3){
+                        left: 0;
+                        position: absolute;
+                        width: 100%;
+                        transform: rotate(-45deg);
+                    }
+                }
+
+            }
+            .manual-translate-x{
+                transform: translate(-100%);
+            }
+        }
+    </style>
+</head>
+<body class="font-sora bg-[#F5F4F6]">
+    <header class="w-full flex justify-center fixed z-10 bg-full2">
+        <nav class="max-w-[1200px] w-full flex items-center py-8 px-4 justify-between mb-10 relative hamburger-trigger bg-trigger-white">
+            <img src="/assets/logo.svg" alt="">
+            <ul class="gap-5 items-center hidden md:flex">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Our Process</a></li>
+                <li><a href="#">Works</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li class="special bg-secondary text-white animation-ease p-2 rounded-md"><a href="#">Work with us</a></li>
+            </ul>
+            <label for="menu" class="w-12 flex flex-col gap-[6px] justify-center bg-primary p-2 h-12 rounded-lg md:hidden">
+                <div class="h-1 bg-secondary"></div>
+                <div class="h-1 bg-secondary"></div>
+                <div class="h-1 bg-secondary"></div>
+            </label>
+            <div id="menulist" class="-z-10 menu md:hidden absolute manual-translate-x bg-[#F5F4F6] top-0 left-0 h-[100svh] w-[100vw] animation-ease flex justify-center items-center">
+                <ul class="gap-10 items-center flex flex-col">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Our Process</a></li>
+                    <li><a href="#">Works</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li class="special bg-secondary text-white animation-ease p-2 rounded-md"><a href="#">Work with us</a></li>
+                </ul>
+            </div>
+            <input class="hidden" type="checkbox" name="menu" id="menu">
+        </nav>
+    </header>
+    <main>
+        <section class="w-full flex justify-center">
+            <div class="max-w-[1200px] w-full flex flex-col-reverse justify-center gap-10 mt-25 bg-primary text-white mx-4 md:mx-0 px-10 p-20 rounded-2xl lg:flex-row md:p-35">
+                <div class="flex-1 flex gap-10 flex-col">
+                    <h1 class="font-bold text-5xl">Design studio <br> for ambitious <br> brand</h1>
+                    <p>At Neutra, we merge creativity and strategy to craft designs that  both captivate and elevate.</p>
+                    <div class="flex items-center gap-3 bg-[#4B4B4B] w-fit p-2 rounded-md">
+                        <p>Schedule a call</p>
+                        <button class="p-2 px-3 rounded-md bg-secondary special animation-ease cursor-pointer">→</button>
+                    </div>
+                </div>
+                <div class="flex-1 relative lg:right-[-100px] lg:top-[-50px] lg:scale-125">
+                    <img class="lg:absolute" src="/assets/hero-img.png" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="w-full flex justify-center my-30">
+            <div class="max-w-[1200px] w-full flex flex-col gap-15 mx-4 md:mx-0">
+                <div class="w-full flex flex-col items-center gap-4 text-center">
+                    <p class="font-manrope bg-white border border-[#E6E6E6] px-3 rounded-full">Our Process</p>
+                    <h1 class="font-bold text-4xl font-manrope">We Simplify The Journey<br>From Design To Launch.</h1>
+                    <p class="text-center text-black/60">We make it easy to bring your ideas to life, guiding you from<br>concept to a fully launched product.</p>
+                </div>
+
+                <div class="flex gap-8 w-fit flex-col md:flex-row">
+                    <div class="flex flex-col gap-8 bg-white py-7 px-7 rounded-2xl flex-1">
+                        <img class="w-fit" src="/assets/rocket.svg" alt="">
+                        <h2 class="text-2xl font-medium">Kickoff</h2>
+                        <p class="text-black/75">The kickoff stage is where everything begins. We align with you to understand your goals, vision, and expectations. Through in-depth discussions and thorough research.</p>
+                    </div>
+                    <div class="flex flex-col gap-8 bg-white py-7 px-7 rounded-2xl flex-1">
+                        <img class="w-fit" src="/assets/community.svg" alt="">
+                        <h2 class="text-2xl font-medium">Experts</h2>
+                        <p class="text-black/75">Our team consits of expert graphic and product designers who have been in this industry for more than 10+ years.</p>
+                    </div>
+                    <div class="flex flex-col gap-8 bg-white py-7 px-7 rounded-2xl flex-1">
+                        <img class="w-fit" src="/assets/gear.svg" alt="">
+                        <h2 class="text-2xl font-medium">Unlimited Revisions</h2>
+                        <p class="text-black/75">Once the design and development are finalized, we seamlessly transition to the handoff stage. Here, we provide you with all the assets, documentation, and support to a smooth launch. And revisions (minor) until you're satisfied.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-full flex justify-center bg-white py-30">
+            <div class="max-w-[1200px] w-full flex flex-col gap-15 mx-4 md:mx-0">
+                <div class="w-full flex flex-col items-center gap-4 text-center">
+                    <p class="font-manrope bg-white border border-[#E6E6E6] px-3 rounded-full">Our Works</p>
+                    <h1 class="font-bold text-4xl font-manrope">Building Digital Excellence  with Neuerve</h1>
+                    <p class="text-black/60">Explore our curated work, showcasing collaborations with <br> visionary clients across diverse industries.</p>
+                </div>
+
+                <div class="flex flex-wrap gap-8">
+                    <div class="font-manrope flex flex-col gap-7 bg-[#F5F4F6] w-fit p-5 rounded-2xl">
+                        <img class="max-w-[532px] w-full rounded-xl" src="https://www.figma.com/file/Wfi7nXeo7DGoGQeIJUeqA9/image/ab7f30c2846be8b6512336ae0c22cb67a7e5bd98" alt="">
+                        <h2 class="font-semibold text-2xl">Codify</h2>
+                        <ul class="flex gap-3">
+                            <li class="border border-black w-fit px-3 py-1 text-sm rounded-full">Agency</li>
+                            <li class="border border-black w-fit px-3 py-1 text-sm rounded-full">Portfolio</li>
+                            <li class="border border-black w-fit px-3 py-1 text-sm rounded-full">Saas</li>
+                        </ul>
+                    </div>
+                    <div class="font-manrope flex flex-col gap-7 bg-[#F5F4F6] w-fit p-5 rounded-2xl">
+                        <img class="max-w-[532px] w-full rounded-xl" src="https://www.figma.com/file/Wfi7nXeo7DGoGQeIJUeqA9/image/8e7d703e03482185ca13ef47bc62efd23f58cd89" alt="">
+                        <h2 class="font-semibold text-2xl">Taskify</h2>
+                        <ul class="flex gap-3">
+                            <li class="border border-black w-fit px-3 py-1 text-sm rounded-full">Business</li>
+                            <li class="border border-black w-fit px-3 py-1 text-sm rounded-full">AI</li>
+                            <li class="border border-black w-fit px-3 py-1 text-sm rounded-full">Saas</li>
+                        </ul>
+                    </div>
+                    <div class="font-manrope flex flex-col gap-7 bg-[#F5F4F6] w-fit p-5 rounded-2xl">
+                        <img class="max-w-[532px] w-full rounded-xl" src="https://www.figma.com/file/Wfi7nXeo7DGoGQeIJUeqA9/image/9ca6e124b740420023e6f49f548e4145e5677558" alt="">
+                        <h2 class="font-semibold text-2xl">Flexify</h2>
+                        <ul class="flex gap-3">
+                            <li class="border border-black w-fit px-3 py-1 text-sm rounded-full">Saas</li>
+                            <li class="border border-black w-fit px-3 py-1 text-sm rounded-full">AI</li>
+                            <li class="border border-black w-fit px-3 py-1 text-sm rounded-full">Business</li>
+                        </ul>
+                    </div>
+                    <div class="font-manrope flex flex-col gap-7 bg-[#F5F4F6] w-fit p-5 rounded-2xl">
+                        <img class="max-w-[532px] w-full rounded-xl" src="https://www.figma.com/file/Wfi7nXeo7DGoGQeIJUeqA9/image/e63dfded768a58b704b7bcad37228c61ce94abba" alt="">
+                        <h2 class="font-semibold text-2xl">Codify</h2>
+                        <ul class="flex gap-3">
+                            <li class="border border-black w-fit px-3 py-1 text-sm rounded-full">Business</li>
+                            <li class="border border-black w-fit px-3 py-1 text-sm rounded-full">Portfolio</li>
+                            <li class="border border-black w-fit px-3 py-1 text-sm rounded-full">Landing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-full flex justify-center bg-white py-30">
+            <div class="max-w-[1200px] w-full flex flex-col gap-15 mx-4 md:mx-0">
+                <div class="w-full flex flex-col items-center gap-4 text-center">
+                    <p class="font-manrope bg-white border border-[#E6E6E6] px-3 rounded-full">Testimonials</p>
+                    <h1 class="font-bold text-4xl font-manrope">Worldwide customers</h1>
+                    <p class="text-black/60">Neuevre empowers global teams with seamless integration and time-saving capabilities.</p>
+                </div>
+
+                <div class="flex gap-4 flex-col md:flex-row">
+                    <div class="bg-[#ECF0F3] p-10 rounded-xl flex-1 flex gap-4 flex-col">
+                        <div class="flex gap-3">
+                            <img src="/assets/icon1.png" alt="">
+                            <div>
+                                <h3 class="font-bold">David Johnson</h3>
+                                <p class="text-sm">Saas company</p>
+                            </div>
+                        </div>
+                        <p>Neuevre transformed our website, we've never looked better!</p>
+                    </div>
+                    <div class="bg-[#F9FBE7] p-10 rounded-xl flex-1 flex gap-4 flex-col">
+                        <div class="flex gap-3">
+                            <img src="/assets/icon2.png" alt="">
+                            <div>
+                                <h3 class="font-bold">Paishal Arip</h3>
+                                <p class="text-sm">Saas company</p>
+                            </div>
+                        </div>
+                        <p>Neuevre transformed our website, we've never looked better!</p>
+                    </div>
+                    <div class="bg-[#E1F5FE] p-10 rounded-xl flex-1 flex gap-2 flex-col">
+                        <div class="flex gap-3">
+                            <img src="/assets/icon3.png" alt="">
+                            <div>
+                                <h3 class="font-bold">Somra Yudhi</h3>
+                                <p class="text-sm">Saas company</p>
+                            </div>
+                        </div>
+                        <p>Neuevre transformed our website, we've never looked better!</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-5 flex-col items-center">
+                    <p>Our awesome clients</p>
+                    <div class="flex justify-between w-full flex-wrap items-center">
+                        <img class="w-fit" src="/assets/landify.svg" alt="">
+                        <img class="w-fit" src="/assets/flowboardsvg.svg" alt="">
+                        <img class="w-fit" src="/assets/startify.svg" alt="">
+                        <img class="w-fit" src="/assets/flexify.svg" alt="">
+                        <img class="w-fit" src="/assets/agentify.svg" alt="">
+                        <img class="w-fit" src="/assets/codify.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-full flex justify-center py-30">
+            <div class="max-w-[1200px] w-full flex flex-col gap-15 mx-4 md:mx-0">
+                <div class="w-full flex flex-col items-center gap-4 text-center">
+                    <p class="font-manrope bg-white border border-[#E6E6E6] px-3 rounded-full">Pricing</p>
+                    <h1 class="font-bold text-4xl font-manrope">Unlock Your Growth</h1>
+                </div>
+
+                <div class="flex flex-col gap-5 md:flex-row">
+                    <div class="flex-1 flex flex-col gap-20 bg-white rounded-2xl p-10">
+                        <div class="flex flex-col gap-5">
+                            <div class="flex flex-col gap-2">
+                                <h2 class="text-2xl font-bold">Part-time</h2>
+                                <div class="h-[1px] bg-black/10"></div>
+                            </div>
+                            <ul class="flex gap-3 flex-col list-box pl-5">
+                                <li class="pl-3">Fast delivery & response</li>
+                                <li class="pl-3">Pause / cancel anytime</li>
+                                <li class="pl-3">Dedicated project manager</li>
+                                <li class="pl-3">1 request at the time</li>
+                                <li class="pl-3">SEO Marketing</li>
+                            </ul>
+                            <p class="text-4xl font-bold flex items-center">$2450 <span class="text-lg pl-2 font-normal text-black/50">/ month</span></p>
+                            <button class="border border-black py-3 rounded-xl special animation-ease cursor-pointer">Get Started</button>
+                        </div>
+                    </div>
+                    <div class="flex-1 flex flex-col gap-20 bg-white rounded-2xl p-10">
+                        <div class="flex flex-col gap-5">
+                            <div class="flex flex-col gap-2">
+                                <h2 class="text-2xl font-bold">Full-time</h2>
+                                <div class="h-[1px] bg-black/10"></div>
+                            </div>
+                            <ul class="flex gap-3 flex-col list-box pl-5">
+                                <li class="pl-3">Fast delivery & response</li>
+                                <li class="pl-3">Pause / cancel anytime</li>
+                                <li class="pl-3">Dedicated project manager</li>
+                                <li class="pl-3">1 request at the time</li>
+                                <li class="pl-3">SEO Marketing</li>
+                            </ul>
+                            <p class="text-4xl font-bold flex items-center">$3950 <span class="text-lg pl-2 font-normal text-black/50">/ month</span></p>
+                            <button class="border border-black py-3 rounded-xl special animation-ease cursor-pointer">Get Started</button>
+                        </div>
+                    </div>
+                    <div class="flex-1 flex flex-col gap-20 bg-primary text-white rounded-2xl p-10">
+                        <div class="flex flex-col gap-5">
+                            <div class="flex flex-col gap-2">
+                                <div class="flex justify-between">
+                                    <h2 class="text-2xl font-bold">Custom</h2>
+                                    <p class="text-xs border border-[#FF620A] text-[#FF620A] w-fit py-0 px-4 rounded-full flex items-center">popular</p>
+                                </div>
+                                <div class="h-[1px] bg-white/10"></div>
+                            </div>
+                            <ul class="flex gap-3 flex-col list-box pl-5">
+                                <li class="pl-3">Fast delivery & response</li>
+                                <li class="pl-3">Pause / cancel anytime</li>
+                                <li class="pl-3">Dedicated project manager</li>
+                                <li class="pl-3">1 request at the time</li>
+                                <li class="pl-3">SEO Marketing</li>
+                            </ul>
+                            <p class="text-4xl font-bold flex items-center font-manrope">$5999 <span class="text-lg pl-2 font-normal text-white/50 font-sora">/ month</span></p>
+                            <button class="bg-secondary py-3 rounded-xl special animation-ease cursor-pointer">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="w-full flex justify-center py-10">
+        <div class="max-w-[1200px] w-full flex flex-col gap-15 mx-4 md:mx-0 bg-primary rounded-3xl text-white p-10">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="max-w-[317px] flex flex-col gap-5">
+                    <img class="w-fit" src="/assets/Logo-complete.svg" alt="">
+                    <p>Get in touch to find out more about digital experiences to effectively  reach and engage customers and target audiences.</p>
+                    <a class="text-[#FF620A]" href="#">contact@neuerve.com</a>
+                </div>
+                <img class="w-[157px] order-[-1] md:order-0 md:w-fit" src="assets/edit.png" alt="">
+                <div class="flex gap-10">
+                    <ul class="flex flex-col gap-3">
+                        <li class="text-[#FF620A]">Company</li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Cases</a></li>
+                        <li><a href="#">Article</a></li>
+                    </ul>
+                    <ul class="flex flex-col gap-3">
+                        <li class="text-[#FF620A]">Legal</li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Licencing</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col gap-5">
+                <div class="h-[1px] bg-white/45"></div>
+                <div class="flex justify-between pr-1">
+                    <p>2025 © NEURVE DESIGN STUDIO</p>
+                    <div class="flex gap-3">
+                        <img src="/assets/Dribble.svg" alt="">
+                        <img src="/assets/LinkedIn.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
